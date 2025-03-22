@@ -1,10 +1,16 @@
 @extends('layouts.main')
 
 @section('content')
-    
-    <div class="vh-100 d-flex justify-content-center align-items-center">
+
+
+        <div class="vh-100 d-flex justify-content-center align-items-center">
+
+
         <div class="card p-4 shadow-lg bg-opacity-75"
             style="background-color: rgba(255,255,255,0.75); max-width: 400px; width: 100%;">
+            <div class=" d-flex justify-content-center align-items-center mb-3">
+                <img src="{{ asset('assets/images/banana-game.png') }}" alt="Profile" class="rounded-circle text-center" width="200" height="200">
+            </div>
             <form method="POST" action="{{ route('login.process') }}">
                 @csrf
                 <div class="mb-3">
