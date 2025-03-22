@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,3 +16,8 @@ Route::post('/login/process', [AuthController::class, 'loginProcess'])->name('lo
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+
+Route::get('/game/select-mode', [GameController::class, 'selectMode'])->name('game.select-mode')->middleware('auth');
+Route::get('/game/{mode}', [GameController::class, 'game'])->name('game')->middleware('auth');
+
+Route::post('/add-score', [GameController::class, 'addScore'])->name('game.add-score')->middleware('auth');
