@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\LeaderBoardController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -21,3 +22,5 @@ Route::get('/game/select-mode', [GameController::class, 'selectMode'])->name('ga
 Route::get('/game/{mode}', [GameController::class, 'game'])->name('game')->middleware('auth');
 
 Route::post('/add-score', [GameController::class, 'addScore'])->name('game.add-score')->middleware('auth');
+
+Route::get('/leaderboard', [LeaderBoardController::class, 'index'])->name('leaderboard')->middleware('auth');
