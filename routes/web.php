@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\LeaderBoardController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,3 +25,6 @@ Route::get('/game/{mode}', [GameController::class, 'game'])->name('game')->middl
 Route::post('/add-score', [GameController::class, 'addScore'])->name('game.add-score')->middleware('auth');
 
 Route::get('/leaderboard', [LeaderBoardController::class, 'index'])->name('leaderboard')->middleware('auth');
+
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
+Route::put('/profile-update/{user}', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');

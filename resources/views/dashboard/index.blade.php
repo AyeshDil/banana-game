@@ -16,7 +16,7 @@
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="p-4 text-center w-50 h-50 align-items-center justify-content-center" >
                     <a href="{{ route('game.select-mode') }}" class="btn btn-lg btn-success w-75 mb-3">New Game</a>
-                    <a href="#" class="btn btn-lg btn-info w-75 mb-3">Profile</a>
+                    <a href="{{ route('profile') }}" class="btn btn-lg btn-info w-75 mb-3">Profile</a>
                     <a href="{{ route('leaderboard') }}" class="btn btn-lg btn-warning w-75 mb-3">Leaderboard</a>
                     <a href="#" class="btn btn-lg btn-danger w-75">Logout</a>
                 </div>
