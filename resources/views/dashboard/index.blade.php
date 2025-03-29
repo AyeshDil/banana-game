@@ -18,7 +18,11 @@
                     <a href="{{ route('game.select-mode') }}" class="btn btn-lg btn-success w-75 mb-3">New Game</a>
                     <a href="{{ route('profile') }}" class="btn btn-lg btn-info w-75 mb-3">Profile</a>
                     <a href="{{ route('leaderboard') }}" class="btn btn-lg btn-warning w-75 mb-3">Leaderboard</a>
-                    <a href="#" class="btn btn-lg btn-danger w-75">Logout</a>
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-lg btn-danger w-75">Logout</button>
+                    </form>
                 </div>
             </div>
 
