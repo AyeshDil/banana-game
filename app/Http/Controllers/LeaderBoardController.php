@@ -9,7 +9,10 @@ use Illuminate\Support\Facades\DB;
 
 class LeaderBoardController extends Controller
 {
-    public function index() {
+    public function index() 
+    {
+        // Max score    
+        $maxScore = Score::where('user_id', auth()->user()->id)->max('score');
 
         // Select the top 10 players for today with total score today
         $todayTopPlayers = Score::select('user_id', DB::raw('SUM(score) as score'))
@@ -27,6 +30,6 @@ class LeaderBoardController extends Controller
             ->limit(10)
             ->get();
 
-        return view('leaderboard.index', compact('todayTopPlayers', 'thisWeekTopPlayers'));
+        return view('leaderboard.index', compact('todayTopPlayers', 'thisWeekTopPlayers', 'maxScore'));
     }
 }
