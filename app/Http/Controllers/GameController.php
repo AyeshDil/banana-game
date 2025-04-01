@@ -10,7 +10,10 @@ class GameController extends Controller
 {
     public function selectMode()
     {
-        return view('game.select-mode');
+        // Max score    
+        $maxScore = Score::where('user_id', auth()->user()->id)->max('score');
+
+        return view('game.select-mode', compact('maxScore'));
     }
 
     public function game(String $mode)

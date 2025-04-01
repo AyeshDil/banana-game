@@ -11,8 +11,8 @@
 
 <!-- Max Score & Profile -->
 <div class="position-absolute top-0 end-0 p-3 d-flex align-items-center gap-2">
-    <div class="badge bg-light text-dark px-3 py-2">Max Score: 2 250</div>
-    <img src="{{ asset('assets/images/demo-profile-pic.jpg') }}" class="rounded-circle" width="40" height="40" alt="Profile">
+    <div class="badge bg-light text-dark px-3 py-2">Max Score: {{ $maxScore ?? '0' }}</div>
+    {{-- <img src="{{ asset('assets/images/demo-profile-pic.jpg') }}" class="rounded-circle" width="40" height="40" alt="Profile"> --}}
 </div>
 
 <!-- Profile Form & History -->
