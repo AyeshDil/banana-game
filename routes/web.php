@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\GameController;
-use App\Http\Controllers\LeaderBoardController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GoogleAuthController;
+use App\Http\Controllers\LeaderBoardController;
 
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -13,6 +14,9 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/verify/process', [AuthController::class, 'verifyProcess'])->name('verify.process');
 Route::get('/verify-otp/{user}', [AuthController::class, 'otp'])->name('otp');
+
+Route::get('auth/google', [GoogleAuthController::class, 'redirectToGoogle'])->name('google.redirect');
+Route::get('auth/google/callback', [GoogleAuthController::class, 'handleGoogleCallback']);
 
 Route::post('/register/process', [AuthController::class, 'registerProcess'])->name('register.process');
 Route::post('/login/process', [AuthController::class, 'loginProcess'])->name('login.process');

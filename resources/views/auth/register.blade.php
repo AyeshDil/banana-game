@@ -36,7 +36,7 @@
             </div>
 
             <div class="mt-3">
-                <a href="" class="btn btn-light border w-100 d-flex align-items-center justify-content-center">
+                <a href="{{ route('google.redirect') }}" class="btn btn-light border w-100 d-flex align-items-center justify-content-center">
                     <img src="https://img.icons8.com/color/16/000000/google-logo.png" class="me-2">Sign up with Google
                 </a>
             </div>
