@@ -11,12 +11,15 @@ class ProfileController extends Controller
 {
     public function index() 
     {
+        // Max score    
+        $maxScore = Score::where('user_id', auth()->user()->id)->max('score');
+
         $scoreHistory = Score::where('user_id', auth()->user()->id)
             ->orderBy('created_at', 'desc')
             ->limit(10)
             ->get();
 
-        return view('profile.index', compact('scoreHistory'));
+        return view('profile.index', compact('scoreHistory', 'maxScore'));
     }
 
     public function update(Request $request, User $user)

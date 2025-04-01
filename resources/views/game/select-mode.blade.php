@@ -15,7 +15,7 @@
             <!-- Top Bar -->
             <div class="w-100 d-flex justify-content-end align-items-center p-3 gap-4">
                 <div class="badge bg-light text-dark p-2">Max Score: {{ $maxScore ?? '0' }}</div>
-                <img src="{{ asset('assets/images/demo-profile-pic.jpg') }}" alt="Profile" class="rounded-circle" width="40" height="40">
+                {{-- <img src="{{ asset('assets/images/demo-profile-pic.jpg') }}" alt="Profile" class="rounded-circle" width="40" height="40"> --}}
             </div>
 
             <!-- Mode Selection -->
