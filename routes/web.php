@@ -7,7 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\LeaderBoardController;
-
+use App\Http\Controllers\MusicController;
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
@@ -33,3 +33,6 @@ Route::get('/leaderboard', [LeaderBoardController::class, 'index'])->name('leade
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
 Route::put('/profile-update/{user}', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
+
+
+Route::post('/set-mute', [MusicController::class, 'muteAndUnmute'])->name('set-mute');

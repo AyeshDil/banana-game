@@ -28,7 +28,7 @@
 
             <!-- Mute/Unmute Button -->
             <div class="position-absolute bottom-0 end-0 p-3">
-                <button class="btn btn-light border" id="mute-button"><iconify-icon icon="solar:music-notes-outline" noobserver></iconify-icon></button>
+                <button class="btn btn-light border" id="mute-button"><iconify-icon icon="solar:muted-outline" noobserver=""></iconify-icon></button>
             </div>
 
         </div>
@@ -39,8 +39,9 @@
 @section('page-scripts')
     <script>
         document.getElementById('mute-button').addEventListener('click', function() {
+
             let btn = this;
-            btn.innerHTML = btn.innerHTML === '<iconify-icon icon="solar:music-notes-outline" noobserver=""></iconify-icon>' 
+            btn.innerHTML = (btn.innerHTML === '<iconify-icon icon="solar:music-notes-outline" noobserver=""></iconify-icon>' )
                 ? '<iconify-icon icon="solar:muted-outline" noobserver=""></iconify-icon>' 
                 : '<iconify-icon icon="solar:music-notes-outline" noobserver=""></iconify-icon>';
         });

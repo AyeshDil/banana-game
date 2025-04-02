@@ -85,9 +85,19 @@
 
 <!-- Music Button -->
 <div class="position-absolute bottom-0 end-0 p-3">
-    <button class="btn btn-light border rounded-circle">
-        <iconify-icon icon="solar:music-notes-outline"></iconify-icon>
-    </button>
+    <button class="btn btn-light border rounded-circle" id="mute-button"><iconify-icon icon="solar:muted-outline"></iconify-icon></button>
 </div>
 
+@endsection
+
+@section('page-scripts')
+
+    <script>
+        document.getElementById('mute-button').addEventListener('click', function() {
+            let btn = this;
+            btn.innerHTML = (btn.innerHTML === '<iconify-icon icon="solar:music-notes-outline" noobserver=""></iconify-icon>' )
+                ? '<iconify-icon icon="solar:muted-outline" noobserver=""></iconify-icon>' 
+                : '<iconify-icon icon="solar:music-notes-outline" noobserver=""></iconify-icon>';
+        });
+    </script>
 @endsection
